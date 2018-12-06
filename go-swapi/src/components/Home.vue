@@ -53,24 +53,12 @@ export default {
   methods: {
     apiRequest: function() {
       axios
-      .get('https://swapi.co/api/' + this.input)
+      //.get('https://swapi.co/api/' + this.input)
+      .get('http://localhost:8080/swapi100/' + this.input)
       // pre标签会自动显示格式化文本，这里都不需要转成字符串
       //.then(response => (this.result = JSON.stringify(response.data)))
       .then(response => (this.result = response.data))
       .catch(() => this.result = "404 Not Found")
-    },
-    createHeart: function(event) {
-      var d = document.createElement("div");
-      d.className = "heart";
-      hearts.push({
-        el : d,
-        x : event.clientX - 5,
-        y : event.clientY - 5,
-        scale : 1,
-        alpha : 1,
-        color : randomColor()
-      });
-      document.body.appendChild(d);
     }
   }
 }
