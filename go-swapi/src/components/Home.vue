@@ -13,14 +13,15 @@
         <el-button class="input-request" type="primary" @click="apiRequest">Request</el-button>
         <div class="input-hint">Need a hint? try people/1/ or planets/3/ or starships/9/</div>
       </div>
-      <el-card class="result-container">
-        <div slot="header" class="result-clearfix">
-          <span>Result:</span>
+      <div class="result-container">
+        <div class="result-header">
+          Result:
         </div>
+        <hr>
         <div class="result-content">
           <pre>{{result}}</pre>
         </div>
-      </el-card>
+      </div>
     </div>
     <div class="intro-card">
       <div class="intro-container">
@@ -57,6 +58,19 @@ export default {
       //.then(response => (this.result = JSON.stringify(response.data)))
       .then(response => (this.result = response.data))
       .catch(() => this.result = "404 Not Found")
+    },
+    createHeart: function(event) {
+      var d = document.createElement("div");
+      d.className = "heart";
+      hearts.push({
+        el : d,
+        x : event.clientX - 5,
+        y : event.clientY - 5,
+        scale : 1,
+        alpha : 1,
+        color : randomColor()
+      });
+      document.body.appendChild(d);
     }
   }
 }
@@ -68,7 +82,8 @@ export default {
   height: 200px;
   margin: auto;
   text-align: center;
-  color: white;
+  color: var(--gray-info);
+  font-weight: lighter;
   background-color: var(--light-black);
   overflow:hidden;
 }
@@ -130,12 +145,35 @@ export default {
 .result-container {
   height: 400px;
   margin-top: 40px;
+  padding: 0px;
+  background-color: #f5f5f5;
+  border: 1px solid var(--light-black);
+  border-radius: 5px;
+  overflow: hidden;
   overflow-y: auto;
 }
 
-.result-content {
-  color: black;
-  clear: both;
+.result-container hr {
+  margin: 0;
+}
+
+.result-header {
+  line-height: 50px;
+  padding-left: 12px;
+  font-size: 18px;
+  font-weight: normal;
+  background-color: white;
+}
+
+.result-content pre {
+  margin: 0;
+  padding: 20px;
+  font-family: Menlo,Monaco,Consolas,courier new,monospace;
+  font-weight: lighter;
+  font-size: 14px;
+  color: #3a3f44;
+  word-break: break-all;
+  word-wrap: break-word;
 }
 
 .intro-card {
@@ -154,9 +192,12 @@ export default {
 .intro-left, .intro-right {
   float: left;
   display: inline-block;
-  width: 300px;
+  width: 340px;
   margin-top: 20px;
-  margin-left: 70px;
+  margin-left: 40px;
+  line-height: 18px;
+  font-weight: lighter;
+  color: var(--gray-info);
 }
 
 .intro-title {
@@ -165,7 +206,7 @@ export default {
 }
 
 .intro-left>p, .intro-right>p {
-  font-size: 14px;
+  font-size: 15px;
 }
 
 </style>

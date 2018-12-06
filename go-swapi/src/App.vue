@@ -30,9 +30,12 @@ export default {
 :root {
   --black: black;
   --light-black: #222222;
-  --yellow: #FFE300;
   --gray: #B6B3B4;
-  --gray-info: #bababa;
+  --gray-info: #d1d1d1;
+  --yellow: #FFE300;
+  --red: #B53124;
+  --blue: #2686C2;
+  --green: #01AB78;
 }
 
 body {
@@ -51,7 +54,7 @@ body {
   padding-right: 10px;
   text-align: right;
   background-color: var(--light-black);
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--red);
 }
 
 .app-main-header button {
@@ -86,5 +89,6 @@ body {
   height: 60px;
   margin-top: 40px;
   background-color: var(--light-black);
+  border-top: 1px solid var(--blue);
 }
 </style>
