@@ -1,5 +1,6 @@
 <template>
-  <div @click="showSaber">
+  <!--disable the saber effect<div @click="showSaber">-->
+  <div>
     <header class="app-main-header">
       <el-button type="primary">HOME</el-button>
       <el-button type="primary">ABOUT</el-button>
