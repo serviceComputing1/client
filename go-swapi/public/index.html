@@ -8,6 +8,12 @@
     <title>go-swapi</title>
   </head>
   <body>
+    <script>
+      function swapiCallback(acptlang) {
+        this.$store.commit('updateResult', JSON.stringify(acptlang))
+        //alert(JSON.stringify(acptlang))
+      }
+    </script>
     <noscript>
       <strong>We're sorry but go-swapi doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>

@@ -19,7 +19,7 @@
         </div>
         <hr>
         <div class="result-content">
-          <pre>{{result}}</pre>
+          <pre>{{getResultComputed}}</pre>
         </div>
       </div>
     </div>
@@ -51,14 +51,36 @@ export default {
     }
   },
   methods: {
+    /*
+    swapiCallback: function(acptlang) {
+      this.$store.commit('updateResult', JSON.stringify(acptlang))
+      //alert(JSON.stringify(acptlang))
+    },
+    */
     apiRequest: function() {
+      /*
       axios
       //.get('https://swapi.co/api/' + this.input)
-      .get('http://localhost:8080/swapi100/' + this.input)
+      .get('http://localhost:8080/' + this.input)
       // pre标签会自动显示格式化文本，这里都不需要转成字符串
       //.then(response => (this.result = JSON.stringify(response.data)))
       .then(response => (this.result = response.data))
-      .catch(() => this.result = "404 Not Found")
+      .catch(() => this.result = '404 Not Found')
+      */
+      this.result = 'Loading ...'
+      var tag = document.createElement('script')
+      tag.src = 'http://localhost:8080/' + this.input + '?callback=swapiCallback'
+      document.querySelector('head').appendChild(tag)
+    }
+  },
+  computed: {
+    getResultComputed: function() {
+      return this.$store.getters.getResult
+    }
+  },
+  watch: {
+    getResultComputed: function(val) {
+      this.result = val;
     }
   }
 }
