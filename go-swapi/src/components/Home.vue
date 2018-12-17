@@ -41,8 +41,7 @@
 </template>
 
 <script>
-import axios from 'axios'
-
+//import axios from 'axios'
 export default {
   data: function() {
     return {
@@ -70,14 +69,9 @@ export default {
       .then(response => (this.result = response.data))
       .catch(() => this.result = '404 Not Found')
       */
-
-      /*
-      this.result = 'Loading ...'
       var tag = document.createElement('script')
       tag.src = 'http://localhost:8080/' + this.input + '?callback=swapiCallback'
       document.querySelector('head').appendChild(tag)
-      */
-      swapiCallback('333')
     },
     updateResult: function() {
       setInterval(() => {
@@ -99,25 +93,21 @@ export default {
   background-color: var(--light-black);
   overflow:hidden;
 }
-
 .detail-text {
   display: block;
   margin-top: 24px;
 }
-
 .app-card {
   width: 800px;
   margin: auto;
   margin-top: 40px;
 }
-
 .input-container {
   height: 65px;
   margin: 0px;
   padding: 0px;
   overflow: hidden;
 }
-
 .input-prefix {
   display: inline-block;
   width: 200px;
@@ -128,7 +118,6 @@ export default {
   color: white;
   background-color: var(--light-black);
 }
-
 .input-content {
   display: inline-block;
   width: 450px;
@@ -136,7 +125,6 @@ export default {
   font-size: 16px;
   color: black;
 }
-
 .input-request {
   width: 150px;
   height: 40px;
@@ -145,7 +133,6 @@ export default {
   background-color: var(--light-black);
   border: none;
 }
-
 .input-hint {
   margin-top: 5px;
   height: 18px;
@@ -153,7 +140,6 @@ export default {
   font-size: 13px;
   color: var(--gray-info);
 }
-
 .result-container {
   height: 400px;
   margin-top: 40px;
@@ -164,11 +150,9 @@ export default {
   overflow: hidden;
   overflow-y: auto;
 }
-
 .result-container hr {
   margin: 0;
 }
-
 .result-header {
   line-height: 50px;
   padding-left: 12px;
@@ -176,7 +160,6 @@ export default {
   font-weight: normal;
   background-color: white;
 }
-
 .result-content pre {
   margin: 0;
   padding: 20px;
@@ -187,7 +170,6 @@ export default {
   word-break: break-all;
   word-wrap: break-word;
 }
-
 .intro-card {
   margin-top: 40px;
   height: 250px;
@@ -195,12 +177,10 @@ export default {
   overflow: hidden;
   background-color: var(--light-black);
 }
-
 .intro-container {
   width: 800px;
   margin: auto;
 }
-
 .intro-left, .intro-right {
   float: left;
   display: inline-block;
@@ -211,14 +191,11 @@ export default {
   font-weight: lighter;
   color: var(--gray-info);
 }
-
 .intro-title {
   text-align: center;
   font-size: 18px;
 }
-
 .intro-left>p, .intro-right>p {
   font-size: 15px;
 }
-
 </style>
