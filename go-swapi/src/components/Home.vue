@@ -19,7 +19,7 @@
         </div>
         <hr>
         <div class="result-content">
-          <pre>{{getResultComputed}}</pre>
+          <pre>{{result}}</pre>
         </div>
       </div>
     </div>
@@ -50,6 +50,9 @@ export default {
       result: null
     }
   },
+  created: function() {
+    this.updateResult()
+  },
   methods: {
     /*
     swapiCallback: function(acptlang) {
@@ -67,20 +70,19 @@ export default {
       .then(response => (this.result = response.data))
       .catch(() => this.result = '404 Not Found')
       */
+
+      /*
       this.result = 'Loading ...'
       var tag = document.createElement('script')
       tag.src = 'http://localhost:8080/' + this.input + '?callback=swapiCallback'
       document.querySelector('head').appendChild(tag)
-    }
-  },
-  computed: {
-    getResultComputed: function() {
-      return this.$store.getters.getResult
-    }
-  },
-  watch: {
-    getResultComputed: function(val) {
-      this.result = val;
+      */
+      swapiCallback('333')
+    },
+    updateResult: function() {
+      setInterval(() => {
+        this.result = globalResult
+      }, 100)
     }
   }
 }
