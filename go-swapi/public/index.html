@@ -9,9 +9,12 @@
   </head>
   <body>
     <script>
+      var globalResult = ''
       function swapiCallback(acptlang) {
-        this.$store.commit('updateResult', JSON.stringify(acptlang))
-        //alert(JSON.stringify(acptlang))
+        //this.$store.commit('updateResult', JSON.stringify(acptlang))
+        //if(acptlang)
+        globalResult = acptlang
+        //vm.$children[0].$children[3]._data.result = 'JSON.stringify(acptlang)'
       }
     </script>
     <noscript>
