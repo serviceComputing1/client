@@ -54,7 +54,7 @@ export default {
     apiRequest: function() {
       axios
       //.get('https://swapi.co/api/' + this.input)
-      .get('http://localhost:8080/swapi100/' + this.input)
+      .get('http://localhost:8080/' + this.input)
       // pre标签会自动显示格式化文本，这里都不需要转成字符串
       //.then(response => (this.result = JSON.stringify(response.data)))
       .then(response => (this.result = response.data))
