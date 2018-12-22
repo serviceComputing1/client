@@ -3,6 +3,7 @@
 client's code of go-swapi。
 
 go-swapi项目的前端部分，vue-cli + axios + RESTFUL + elementUI。架构如下：
+
 ![structure](./report_images/structure.PNG)
 
 ## 分析
