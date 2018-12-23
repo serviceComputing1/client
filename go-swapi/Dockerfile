@@ -17,4 +17,4 @@ RUN npm install --registry=https://registry.npm.taobao.org
 EXPOSE 8081
 
 #运行命令
-CMD ["npm", "run", "serve"]
+CMD ["npm", "run", "serve", "--", "--port", "8081"]
